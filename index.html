@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>GeoLocation</title>
-
+  <link rel="stylesheet" href="styles.css">
 <style>
    #map {
       margin: 0;
@@ -16,9 +16,16 @@
 
 <body>
   <div id="map">
-    <button onclick="findLocation()"> </button>
+    <button onclick="findLocation()"> Click me!</button>
   </div>
 
+  <div id="container">
+    <div class="search">
+      <input id="trackname" placeholder="search for your song..." type="text"></input>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="script.js"></script>
 </body>
