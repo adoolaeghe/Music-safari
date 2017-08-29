@@ -23,7 +23,7 @@ function getSpotifyInfo(trackname) {
   var songuri = jdata.tracks.items[0].uri
   console.log(jdata);
   console.log(songuri)
-  document.write(jdata.tracks.items[0].name)
+  $(".song-list").append(jdata.tracks.items[0].name);
 }
 
 function findLocation(){
