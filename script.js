@@ -1,11 +1,8 @@
 $(document).on('keypress', '#trackname', function() {
   if(event.which === 13) { // check the key was <enter>
-
     var input = $(this);
     console.log(input);
-
     var trackname = input.val();
-    console.log(trackname);
     getSpotifyInfo(trackname);
   }
 });
@@ -19,11 +16,9 @@ function getSpotifyInfo(trackname) {
   xmlhttp.send();
 
   var data = xmlhttp.responseText;
-  var jdata = JSON.parse(data)
-  var songuri = jdata.tracks.items[0].uri
-  console.log(jdata);
-  console.log(songuri)
-  $(".song-list").append(jdata.tracks.items[0].name);
+  var dataToJson = JSON.parse(data)
+  console.log(dataToJson);
+  $(".song-list").append(dataToJson.tracks.items[0].name);
 }
 
 function findLocation(){

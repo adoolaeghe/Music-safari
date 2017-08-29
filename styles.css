@@ -1,7 +1,25 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  color: black;
+}
+
+a:hover{
+  color: black;
+}
+
+#map {
+   margin: 0 auto;
+   padding: 0;
+   height: 400px;
+   width: 80%;
+ }
+
 #container {
-  width: 1040px;
-  margin: 0px auto;
-  min-height: 750px;
+  margin: 5px;
   text-align: center;
 }
 
@@ -14,5 +32,4 @@ input[type='text'] {
 
 .search {
   text-align: center;
-  margin: 50px auto;
 }
