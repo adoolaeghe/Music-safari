@@ -12,9 +12,7 @@
 
     displayUserName: function() {
       var userName = document.getElementById("user-name");
-      console.log(userName);
       userName.innerText = "Logged in as " + this.getUserId();
-      console.log(userName);
     }
   }
 

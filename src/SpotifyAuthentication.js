@@ -60,6 +60,7 @@
 
             $('#login').hide();
             $('#loggedin').show();
+            $('#user-name').show();
           }
       });
     } else {
