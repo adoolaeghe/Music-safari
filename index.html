@@ -17,6 +17,14 @@
   </head>
 
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Music Safari</a>
+      </div>
+    </nav>
+
+    <!-- Login stuff -->
     <div class="container">
       <div id="login">
         <h1>This is an example of the Implicit Grant flow</h1>
@@ -28,29 +36,26 @@
       </div>
     </div>
 
-    <nav class="navbar">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Music Safari</a>
-      </div>
-    </nav>
+    <!-- Map -->
+    <div id="map" class="container">
+      <button onclick="findLocation()">Open map</button>
+    </div>
 
-    <button onclick="findLocation()"> Open map</button>
-
-    <div id="map"></div>
-
-    <div id="container">
+    <!-- Track search -->
+    <div id="track-search" class="container">
       <div class="search">
         <input id="trackname" placeholder="search for a song..." type="text"></input>
+        <button onclick="findLocation()">Find song</button>
         <h4>ex: happy pharrell</h4>
+      </div>
+
+      <div class="song-list">
+
       </div>
     </div>
 
-    <div class="song-list"></div>
 
-
-    <script id="user-profile-template" type="text/x-handlebars-template">
-    </script>
-
+    <script id="user-profile-template" type="text/x-handlebars-template"></script>
     <script id="oauth-template" type="text/x-handlebars-template">
       <h2>oAuth info</h2>
       <dl class="dl-horizontal">
@@ -58,10 +63,10 @@
       </dl>
     </script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="spotify-authentication.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script type="text/javascript" src="src/spotify-authentication.js"></script>
+    <script type="text/javascript" src="src/script.js"></script>
 </html>
 </body>
