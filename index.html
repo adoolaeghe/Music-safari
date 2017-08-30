@@ -1,19 +1,14 @@
 <!doctype html>
 <html>
   <head>
-    <title>Example of the Implicit Grant flow with Spotify</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <style type="text/css">
-      #login, #loggedin {
-        display: none;
-      }
-      .text-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 500px;
-      }
-    </style>
+    <meta charset="utf-8">
+    <title>Music Safari</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
@@ -25,7 +20,7 @@
     </nav>
 
     <!-- Login stuff -->
-    <div class="container">
+    <div class="spotify-container">
       <div id="login">
         <h1>This is an example of the Implicit Grant flow</h1>
         <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
@@ -45,7 +40,7 @@
     <div id="track-search" class="container">
       <div class="search">
         <input id="trackname" placeholder="search for a song..." type="text"></input>
-        <button onclick="findLocation()">Find song</button>
+        <!-- <button onclick="findLocation()">Find song</button> -->
         <h4>ex: happy pharrell</h4>
       </div>
 

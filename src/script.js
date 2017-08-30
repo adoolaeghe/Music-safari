@@ -6,14 +6,14 @@ $(document).on('keypress', '#trackname', function() {
     getSpotifyInfo(trackname);
   }
 });
-var ourparams = getHashParams();
-console.log(ourparams);
+
 function getSpotifyInfo(trackname) {
-  var authtoken = "";
+  var params = getHashParams();
+  // var authtoken = "";
   var url = "https://api.spotify.com/v1/search?query=" + trackname + "&type=track&market=US" ;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open('GET', url, false);
-  xmlhttp.setRequestHeader("Authorization" , "Bearer " + authtoken)
+  xmlhttp.setRequestHeader("Authorization" , "Bearer " + params.access_token)
   xmlhttp.send();
 
   var data = xmlhttp.responseText;
@@ -25,6 +25,7 @@ function getSpotifyInfo(trackname) {
 function findLocation(){
   navigator.geolocation.getCurrentPosition(locationCallback);
 }
+
 function locationCallback(position){
   var location = {lat: position.coords.latitude, lng: position.coords.longitude
   };
