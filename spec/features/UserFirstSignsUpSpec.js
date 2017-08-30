@@ -11,6 +11,8 @@ describe("Login", function() {
       });
   });
   it("should authenticate the user with spotify ", function(next) {
+      browser.fill('input[name="username"]', "musicsafari@outlook.com")
+      browser.fill('input[name="password"]', "Teamb0tjul17")
       browser.pressButton('input[value="Login"]', function() {
       expect(browser.html("body")).toContain("-----");});
   });
