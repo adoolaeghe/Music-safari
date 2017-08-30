@@ -18,8 +18,10 @@
       </div>
     </nav>
 
+    <div id="user-name"></div>
+    
     <!-- Login stuff -->
-    <div class="spotify-container container">
+    <div class="spotify-container">
       <div id="login">
         <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
       </div>
@@ -47,7 +49,8 @@
       </div>
 
 
-    <script id="user-profile-template" type="text/x-handlebars-template"></script>
+    <script id="user-profile-template" type="text/x-handlebars-template">  </script>
+
     <script id="oauth-template" type="text/x-handlebars-template">
       <h2>oAuth info</h2>
       <dl class="dl-horizontal">
@@ -61,6 +64,8 @@
     <script type="text/javascript" src="src/GoogleApiRequester.js"></script>
     <script type="text/javascript" src="src/SpotifyAuthentication.js"></script>
     <script type="text/javascript" src="src/SpotifyApiRequester.js"></script>
+    <script type="text/javascript" src="src/User.js"></script>
+    <script type="text/javascript" src="src/MusicSafari.js"></script>
     <script type="text/javascript" src="src/Interface.js"></script>
     <!-- Bootstrap jQuery - Antoine is NOT allowed to delete this  -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
