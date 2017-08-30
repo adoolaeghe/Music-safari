@@ -8,8 +8,12 @@ $(document).on('keypress', '#trackname', function() {
     $(".song-list").append(searchResults.tracks.items[0].name);
   }
 });
+var params = getHashParams();
 
 $("#open-map").click(function() {
   var googleApiRequester = new GoogleApiRequester();
   googleApiRequester.findLocation();
 });
+
+musicSafari = new MusicSafari(params.access_token)
+musicSafari.displayUserName();

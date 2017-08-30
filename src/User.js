@@ -10,8 +10,16 @@
       xmlhttp.open('GET', this._apiUrl, false);
       xmlhttp.setRequestHeader("Authorization", "Bearer " + this._authToken);
       xmlhttp.send();
+      var response = xmlhttp.responseText;
+      return JSON.parse(response);
+    },
+
+    getUserId: function() {
+      userId = this.getUserData().id;
+      console.log(userId);
+      return userId;
     }
   }
 
-
+  exports.User = User
 })(this);

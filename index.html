@@ -19,10 +19,11 @@
       </div>
     </nav>
 
+    <div id="user-name"></div>
     <!-- Login stuff -->
     <div class="spotify-container">
       <div id="login">
-        <h1>This is an example of the Implicit Grant flow</h1>
+        <!-- <h1>This is an example of the Implicit Grant flow</h1> -->
         <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
       </div>
       <div id="loggedin">
@@ -50,8 +51,8 @@
     </div>
 
 
-    <!-- <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <!-- <h1>Logged in as {{display_name}}</h1>
       <div class="media">
         <div class="pull-left">
           <img class="media-object" width="150" src="{{images.0.url}}" />
@@ -67,8 +68,8 @@
             <dt>Country</dt><dd>{{country}}</dd>
           </dl>
         </div>
-      </div>
-    </script> -->
+      </div> -->
+    </script>
 
     <script id="oauth-template" type="text/x-handlebars-template">
       <h2>oAuth info</h2>
@@ -83,6 +84,8 @@
     <script type="text/javascript" src="src/GoogleApiRequester.js"></script>
     <script type="text/javascript" src="src/SpotifyAuthentication.js"></script>
     <script type="text/javascript" src="src/SpotifyApiRequester.js"></script>
+    <script type="text/javascript" src="src/User.js"></script>
+    <script type="text/javascript" src="src/MusicSafari.js"></script>
     <script type="text/javascript" src="src/Interface.js"></script>
 </html>
 </body>
