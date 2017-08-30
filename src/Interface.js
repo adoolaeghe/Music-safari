@@ -7,17 +7,29 @@ $(document).ready(function(){
       var trackname = input.val();
       var spotifyApiRequester = new SpotifyApiRequester();
       var searchResults = spotifyApiRequester.searchForTrack(trackname);
-      console.log(searchResults);
-      $(".song-list").append(searchResults.tracks.items[0].name);
+      var displayTrackList = function (searchResults) {
+      var tracks = searchResults.tracks.items;
+      console.log(tracks);
+      var trackList = document.createElement("ul");
+      tracks.forEach(function(track) {
+        var trackName = document.createTextNode(track.name);
+        var trackLi = document.createElement("li");
+        var trackText = trackLi.appendChild(trackName);
+        trackLi.appendChild(trackText);
+        trackList.appendChild(trackLi);
+      });
+      $(".song-list").append(trackList);
+    };
+    displayTrackList(searchResults);
     }
   });
-  var params = getHashParams();
 
   $("#open-map").click(function() {
     var googleApiRequester = new GoogleApiRequester();
     googleApiRequester.findLocation();
   });
-
+  
+  var params = getHashParams();
   musicSafari = new MusicSafari(params.access_token)
   musicSafari.displayUserName();
 });
