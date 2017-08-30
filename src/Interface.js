@@ -8,13 +8,16 @@ $(document).on('keypress', '#trackname', function() {
     var displayTrackList = function (searchResults) {
       var tracks = searchResults.tracks.items;
       console.log(tracks);
+      var trackList = document.createElement("ul");
       tracks.forEach(function(track) {
-        var trackLi = document.createElement("div");
+        var trackLi = document.createElement("li");
         var trackName = document.createTextNode(track.name);
-        trackLi.appendChild(trackName);
-        console.log(trackName);
-        $(".song-list").append(trackLi);
+        var trackText = trackLi.appendChild(trackName);
+        trackLi.appendChild(trackText);
+        trackList.appendChild(trackLi);
       });
+
+      $(".song-list").append(trackList);
     };
     displayTrackList(searchResults);
   }
