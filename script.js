@@ -6,7 +6,8 @@ $(document).on('keypress', '#trackname', function() {
     getSpotifyInfo(trackname);
   }
 });
-
+var ourparams = getHashParams();
+console.log(ourparams);
 function getSpotifyInfo(trackname) {
   var authtoken = "";
   var url = "https://api.spotify.com/v1/search?query=" + trackname + "&type=track&market=US" ;

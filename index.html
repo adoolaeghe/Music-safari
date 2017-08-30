@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Example of the Implicit Grant flow with Spotify</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style type="text/css">
+      #login, #loggedin {
+        display: none;
+      }
+      .text-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="login">
+        <h1>This is an example of the Implicit Grant flow</h1>
+        <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+      </div>
+      <div id="loggedin">
+        <div id="user-profile"> </div>
+        <div id="oauth"></div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Music Safari</a>
+      </div>
+    </nav>
+
+    <button onclick="findLocation()"> Open map</button>
+
+    <div id="map"></div>
+
+    <div id="container">
+      <div class="search">
+        <input id="trackname" placeholder="search for a song..." type="text"></input>
+        <h4>ex: happy pharrell</h4>
+      </div>
+    </div>
+
+    <div class="song-list"></div>
+
+
+    <script id="user-profile-template" type="text/x-handlebars-template">
+    </script>
+
+    <script id="oauth-template" type="text/x-handlebars-template">
+      <h2>oAuth info</h2>
+      <dl class="dl-horizontal">
+        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+      </dl>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="spotify-authentication.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="script.js"></script>
+</html>
+</body>
