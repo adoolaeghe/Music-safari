@@ -4,7 +4,7 @@
 
 # Contributors
  - Annalaise Gibbons
- - Antoine Doolaghe
+ - Antoine Doolaeghe
  - Funmi Adewodu
  - James Ransome
 
