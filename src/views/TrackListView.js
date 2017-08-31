@@ -16,7 +16,7 @@
         outputHtml += "</li>";
       });
       outputHtml += "</ul>";
-      $(".song-list").append(outputHtml);
+      $(".song-list").html(outputHtml);
     }
   };
   exports.TrackListView = TrackListView;
