@@ -4,12 +4,12 @@
 
   GoogleApiRequester.prototype = {
     findLocation: function(){
-      return navigator.geolocation.getCurrentPosition(this.locationCallback);
+      navigator.geolocation.getCurrentPosition(this.locationCallback);
     },
 
     locationCallback: function(position){
       var location = {lat: position.coords.latitude, lng: position.coords.longitude};
-      return location;
+      musicSafari.setCurrentLocation(location);
     },
 
     addVisualMarker: function(){
@@ -33,5 +33,5 @@
     }
   };
 
-  exports.GoogleApiRequester = GoogleApiRequester
+  exports.GoogleApiRequester = GoogleApiRequester;
 })(this);

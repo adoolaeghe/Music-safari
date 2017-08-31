@@ -2,6 +2,7 @@
   function MusicSafari(authToken){
       this._authToken = authToken;
       this._markers = [];
+      this._currentLocation = null;
   }
 
   MusicSafari.prototype = {
@@ -17,12 +18,21 @@
     },
 
     addMarker: function(trackId) {
+      googleApiRequester.findLocation();
       var trackPinObject = {
-        location: googleApiRequester.findLocation(),
+        location: this._currentLocation,
         trackId: trackId
-      }
+      };
       this._markers.push(trackPinObject);
       console.log(this._markers);
+    },
+
+    setCurrentLocation: function(location) {
+      this._currentLocation = location;
+    },
+
+    getCurrentLocation: function() {
+      return this._currentLocation;
     }
   };
 
