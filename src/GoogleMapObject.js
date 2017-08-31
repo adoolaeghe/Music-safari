@@ -1,22 +1,25 @@
 (function(exports){
-  function GoogleApiRequester(){
+  function GoogleMapObject(){
   }
 
-  GoogleApiRequester.prototype = {
-    findLocation: function(){
-      navigator.geolocation.getCurrentPosition(this.locationCallback);
+  GoogleMapObject.prototype = {
+    findLocation: function(callback){
+      navigator.geolocation.getCurrentPosition(function(position){
+        var location = {lat: position.coords.latitude, lng: position.coords.longitude};
+        musicSafari.setCurrentLocation(location);
+        callback();
+      });
     },
 
-    locationCallback: function(position){
-      var location = {lat: position.coords.latitude, lng: position.coords.longitude};
-      musicSafari.setCurrentLocation(location);
+    initMap: function(currentLocation) {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: currentLocation
+      });
     },
 
     addVisualMarker: function(){
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 18,
-        center: location
-      });
+
       var contentString ='<h3>Here is the title</h3>'+
       '<iframe src="https://open.spotify.com/embed?uri=spotify:track:3Ed0puq5yeszk6bZkBOop0" frameborder="0" allowtransparency="true"></iframe>';
       var infowindow = new google.maps.InfoWindow({
@@ -33,5 +36,5 @@
     }
   };
 
-  exports.GoogleApiRequester = GoogleApiRequester;
+  exports.GoogleMapObject = GoogleMapObject;
 })(this);

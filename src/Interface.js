@@ -1,7 +1,7 @@
 var spotifyApiRequester = new SpotifyApiRequester();
 var trackListView = new TrackListView();
-var googleApiRequester = new GoogleApiRequester();
-console.log(googleApiRequester);
+var googleMapObject = new GoogleMapObject();
+console.log(googleMapObject);
 
 $(document).ready(function(){
   $('#user-name').hide();
@@ -19,6 +19,6 @@ $(document).ready(function(){
   });
 
   $("#open-map").click(function() {
-    googleApiRequester.findLocation();
+    googleMapObject.findLocation();
   });
 });
