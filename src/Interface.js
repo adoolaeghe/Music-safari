@@ -1,13 +1,8 @@
-var spotifyApiRequester = new SpotifyApiRequester();
-var trackListView = new TrackListView();
-var googleMapObject = new GoogleMapObject();
-console.log(googleMapObject);
-
 $(document).ready(function(){
   $('#user-name').hide();
-  var params = getHashParams();
-  musicSafari = new MusicSafari(params.access_token);
-  musicSafari.displayUserName();
+  // var params = getHashParams();
+  // musicSafari = new MusicSafari(params.access_token);
+  // musicSafari.displayUserName();
 
   $(document).on('keypress', '#trackname', function() {
     if(event.which === 13) { // check the key was <enter>

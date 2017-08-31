@@ -1,11 +1,15 @@
 (function(exports){
-  function MusicSafari(authToken){
-    this._authToken = authToken;
+  function MusicSafari(){
+    this._authToken = "";
     this._markers = [];
     this._currentLocation = null;
   }
 
   MusicSafari.prototype = {
+    setAuthToken: function(token){
+      this._authToken = token;
+    },
+
     getUserId: function (){
       user = new User(this._authToken);
       userId = user.getUserId();
