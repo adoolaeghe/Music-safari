@@ -12,6 +12,7 @@
         outputHtml += "<li><img class='album-thumbnail' src=" + track.album.images[0].url + ">";
         outputHtml += track.name + ", ";
         outputHtml += track.artists[0].name;
+        outputHtml += "<input type=submit value='Add to map' onclick=musicSafari.addMarker('" + track.id + "')></input>";
         outputHtml += "</li>";
       });
       outputHtml += "</ul>";

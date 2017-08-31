@@ -1,8 +1,13 @@
+var spotifyApiRequester = new SpotifyApiRequester();
+var trackListView = new TrackListView();
+var googleApiRequester = new GoogleApiRequester();
+console.log(googleApiRequester);
+
 $(document).ready(function(){
   $('#user-name').hide();
-
-  var spotifyApiRequester = new SpotifyApiRequester();
-  var trackListView = new TrackListView();
+  var params = getHashParams();
+  musicSafari = new MusicSafari(params.access_token);
+  musicSafari.displayUserName();
 
   $(document).on('keypress', '#trackname', function() {
     if(event.which === 13) { // check the key was <enter>
@@ -14,11 +19,6 @@ $(document).ready(function(){
   });
 
   $("#open-map").click(function() {
-    var googleApiRequester = new GoogleApiRequester();
     googleApiRequester.findLocation();
   });
-
-  var params = getHashParams();
-  musicSafari = new MusicSafari(params.access_token);
-  musicSafari.displayUserName();
 });
