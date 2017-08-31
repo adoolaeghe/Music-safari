@@ -1,8 +1,8 @@
 (function(exports){
   function MusicSafari(authToken){
-      this._authToken = authToken;
-      this._markers = [];
-      this._currentLocation = null;
+    this._authToken = authToken;
+    this._markers = [];
+    this._currentLocation = null;
   }
 
   MusicSafari.prototype = {
@@ -18,13 +18,21 @@
     },
 
     addMarker: function(trackId) {
-      googleApiRequester.findLocation();
-      var trackPinObject = {
-        location: this._currentLocation,
-        trackId: trackId
-      };
-      this._markers.push(trackPinObject);
-      console.log(this._markers);
+      var self = this;
+      var locationPromise = new Promise(function(resolve, reject) {
+        googleApiRequester.findLocation();
+        if (self.getCurrentLocation() !== null){
+          resolve();
+        }
+      });
+      locationPromise.then(function(){
+        var trackPinObject = {
+          location: self._currentLocation,
+          trackId: trackId
+        };
+        self._markers.push(trackPinObject);
+        console.log(self._markers);
+      })
     },
 
     setCurrentLocation: function(location) {
