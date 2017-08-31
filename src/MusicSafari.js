@@ -23,13 +23,14 @@
 
     createTrackPinObject: function(trackId) {
       var self = this;
-      googleMapObject.findLocation(function(){
+      googleMapObject.findLocation(function(location){
         var trackPinObject = {
-          location: self.getCurrentLocation(),
+          location: location,
           trackId: trackId
         };
         self._markers.push(trackPinObject);
         console.log(self._markers);
+        googleMapObject.addMapMarker(trackId, location);
       });
 
 

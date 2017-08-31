@@ -61,6 +61,7 @@
             var params = getHashParams();
             musicSafari.setAuthToken(params.access_token);
             musicSafari.displayUserName();
+            googleMapObject.findLocation(googleMapObject.initMap);
 
             $('#login').hide();
             $('#loggedin').show();

@@ -1,5 +1,6 @@
 (function(exports){
   function GoogleMapObject(){
+    this._map = null;
   }
 
   GoogleMapObject.prototype = {
@@ -7,31 +8,32 @@
       navigator.geolocation.getCurrentPosition(function(position){
         var location = {lat: position.coords.latitude, lng: position.coords.longitude};
         musicSafari.setCurrentLocation(location);
-        callback();
+        callback(location);
       });
     },
 
     initMap: function(currentLocation) {
-      var map = new google.maps.Map(document.getElementById('map'), {
+      this._map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         center: currentLocation
       });
     },
 
-    addVisualMarker: function(){
-
+    addMapMarker: function(trackId, location){
+      var self = this;
       var contentString ='<h3>Here is the title</h3>'+
-      '<iframe src="https://open.spotify.com/embed?uri=spotify:track:3Ed0puq5yeszk6bZkBOop0" frameborder="0" allowtransparency="true"></iframe>';
+      "<iframe src='https://open.spotify.com/embed?uri=spotify:track:" + trackId + "'frameborder='0' allowtransparency='true'></iframe>";
+      console.log(contentString);
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
       var marker = new google.maps.Marker({
         position: location,
-        map: map,
+        map: self._map,
         title: 'My Song'
       });
       marker.addListener('click', function() {
-        infowindow.open(map, marker);
+        infowindow.open(self._map, marker);
       });
     }
   };
