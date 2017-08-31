@@ -1,3 +1,5 @@
+![Build status](https://travis-ci.org/adoolaeghe/music-safari.svg?branch=master)
+
 # Music Safari
 
 # Contributors
