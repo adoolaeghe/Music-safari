@@ -1,0 +1,44 @@
+img.album-thumbnail {
+  width: 50px;
+  height: 50px;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  color: black;
+}
+
+a:hover{
+  color: black;
+}
+
+#map {
+   margin: 0 auto;
+   padding: 0;
+   height: 400px;
+   width: 80%;
+ }
+
+#container {
+  margin: 5px;
+  text-align: center;
+}
+
+input[type='text'] {
+  height: 2.2em;
+  font-size: 2em;
+  width: 50%;
+  padding: 5px;
+}
+
+.search {
+  text-align: center;
+}

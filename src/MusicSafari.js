@@ -14,7 +14,7 @@
       var userName = document.getElementById("user-name");
       userName.innerText = "Logged in as " + this.getUserId();
     }
-  }
+  };
 
-  exports.MusicSafari = MusicSafari
+  exports.MusicSafari = MusicSafari;
 })(this);
