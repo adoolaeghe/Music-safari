@@ -4,12 +4,14 @@ $(document).ready(function(){
   // musicSafari = new MusicSafari(params.access_token);
   // musicSafari.displayUserName();
 
-  $(document).on('keypress', '#trackname', function() {
-    if(event.which === 13) { // check the key was <enter>
-      var input = $(this);
-      var trackname = input.val();
-      var searchResults = spotifyApiRequester.searchForTrack(trackname);
-      trackListView.displayTrackList(searchResults);
-    }
+$(document).ready(function() {
+    $("#searchButton").button().click(function(e) {
+        e.preventDefault();
+        var input = $(this);
+        var trackname = document.getElementById("trackName").value;
+        var searchResults = spotifyApiRequester.searchForTrack(trackname);
+        trackListView.displayTrackList(searchResults);
+        $.scrollTo($('song-list'), 1000);
+    });
   });
 });

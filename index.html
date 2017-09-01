@@ -11,20 +11,22 @@
 
   <body>
 
-    <nav class="navbar">
+    <nav class="navbar fixed-top">
       <div class="navbar-header">
         <img class='logo' src='public/img/logo-music-safari.png'>
       </div>
     </nav>
 
-    <div id="user-name"></div>
+    <div class="row">
+      <div id="user-name"></div>
+    </div>
 
     <!-- Login stuff -->
     <div class="center-me">
       <div class="card text-center">
         <div class="card-body">
           <h4 class="card-title">Music Safari</h4>
-          <p class="card-text>">Welcome. Please login to continue</p>
+          <p class="card-text>">Welcome!</p>
           <div class="spotify-container">
               <div id="login">
                 <button id="login-button" class="btn btn-default spotify-btn">Log in with Spotify</button>
@@ -39,17 +41,24 @@
     </div>
 
     <!-- Map -->
-    <div id="map" class="container">
-
+    <div class="row">
+      <div id="map" class="container map-container"></div>
     </div>
 
     <!-- Track search -->
-    <div id="track-search" class="container">
-      <div class="search">
-        <input id="trackname" placeholder="search for a song..." type="text"></input>
-        <!-- <button onclick="findLocation()">Find song</button> -->
-        <h4>example: thriller</h4>
+    <div class="row">
+      <div id="track-search" class="container">
+        <div class="search">
+          <div class="input-group">
+            <input type="text" class="form-control" id="trackName" placeholder="search for a song..."/>
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" id="searchButton" type="button">Search</button>
+            </span>
+            <!-- <button onclick="findLocation()">Find song</button> -->
+          </div>
+        </div>
       </div>
+    </div>
 
       <div class ="card">
         <div class="song-list"></div>
