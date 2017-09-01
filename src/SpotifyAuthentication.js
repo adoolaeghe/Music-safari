@@ -56,7 +56,12 @@
             'Authorization': 'Bearer ' + access_token
           },
           success: function(response) {
-            userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+            // userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+
+            var params = getHashParams();
+            musicSafari.setAuthToken(params.access_token);
+            musicSafari.displayUserName();
+            googleMapObject.findLocation(googleMapObject.initMap);
 
             $('#login').hide();
             $('#loggedin').show();
