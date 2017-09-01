@@ -28,8 +28,6 @@ The app uses Javascript, Jquery, Node.js, Firebase and was tested using Jasmine.
 
 ![Imgur](http://i.imgur.com/6FTVDce.png)
 
-## Further implementation
-
 
 # Contributors
  - Annalaise Gibbons
