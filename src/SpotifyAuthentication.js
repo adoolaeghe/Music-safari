@@ -56,24 +56,7 @@
             'Authorization': 'Bearer ' + access_token
           },
           success: function(response) {
-            // userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-
-            var params = getHashParams();
-            musicSafari.setAuthToken(params.access_token);
-            musicSafari.displayUserName();
-
-            // Initialse map
-            googleMapObject.findLocation(function(location){
-              googleMapObject.initMap(location);
-
-              // Then get data from firebase
-              // musicSafari.loadFromDatabase(function(){
-              //   // Then populate map
-              //   googleMapObject.populateMap(musicSafari._trackPinObjects);
-              // });
-              musicSafari.setupDatabaseListener();
-            });
-
+            musicSafari.setupAppOnLogin();
             $('#login').hide();
             $('#loggedin').show();
             $('#user-name').show();

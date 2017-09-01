@@ -39,14 +39,6 @@
       database.ref('trackPinObjects/').push(trackPinObj);
     },
 
-    loadFromDatabase: function(callback){
-      var self = this;
-      database.ref('trackPinObjects').once('value').then(function(results){
-        self._trackPinObjects = results.val();
-        callback();
-      });
-    },
-
     setupDatabaseListener: function(){
       var callAddMapMarker = function(data) {
         var val = data.val();
@@ -61,6 +53,18 @@
 
     getCurrentLocation: function() {
       return this._currentLocation;
+    },
+
+    setupAppOnLogin: function(){
+      var params = getHashParams();
+      musicSafari.setAuthToken(params.access_token);
+      musicSafari.displayUserName();
+
+      // Initialse map and database listener
+      googleMapObject.findLocation(function(location){
+        googleMapObject.initMap(location);
+        musicSafari.setupDatabaseListener();
+      });
     }
   };
 

@@ -4,20 +4,19 @@
   }
 
   GoogleMapObject.prototype = {
+    initMap: function(currentLocation = {lat: 51.513354, lng: -0.124976}) {
+      this._map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: currentLocation
+      });
+    },
+
     findLocation: function(callback){
       navigator.geolocation.getCurrentPosition(function(position){
         var location = {lat: position.coords.latitude, lng: position.coords.longitude};
         musicSafari.setCurrentLocation(location);
         callback(location);
       });
-    },
-
-    initMap: function(currentLocation) {
-      this._map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: currentLocation
-      });
-      console.log(this._map);
     },
 
     addMapMarker: function(trackId, location){
@@ -34,14 +33,6 @@
       });
       marker.addListener('click', function() {
         infowindow.open(self._map, marker);
-      });
-    },
-
-    populateMap: function(trackPinObjects) {
-      var self = this;
-      Object.entries(trackPinObjects).forEach(function(object) {
-        console.log(object);
-        self.addMapMarker(object[1].trackId, object[1].location);
       });
     }
   };
