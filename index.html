@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Music Safari</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,38 +10,55 @@
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
+
+    <nav class="navbar fixed-top">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Music Safari</a>
+        <img class='logo' src='public/img/logo-music-safari.png'>
       </div>
     </nav>
 
-    <div id="user-name"></div>
+    <div class="row">
+      <div id="user-name"></div>
+    </div>
 
     <!-- Login stuff -->
-    <div class="spotify-container">
-      <div id="login">
-        <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
-      </div>
-      <div id="loggedin">
-        <div id="user-profile"> </div>
-        <div id="oauth"></div>
+    <div class="center-me">
+      <div class="card text-center">
+        <div class="card-body">
+          <h4 class="card-title">Music Safari</h4>
+          <p class="card-text>">Welcome!</p>
+          <div class="spotify-container">
+              <div id="login">
+                <button id="login-button" class="btn btn-default spotify-btn">Log in with Spotify</button>
+              </div>
+              <div id="loggedin">
+                <div id="user-profile"> </div>
+                <div id="oauth"></div>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Map -->
-    <div id="map" class="container">
-      <button id="open-map">Open map</button>
+    <div class="row">
+      <div id="map" class="container map-container"></div>
     </div>
 
     <!-- Track search -->
-    <div id="track-search" class="container">
-      <div class="search">
-        <input id="trackname" placeholder="search for a song..." type="text"></input>
-        <!-- <button onclick="findLocation()">Find song</button> -->
-        <h4>example: thriller</h4>
+    <div class="row">
+      <div id="track-search" class="container">
+        <div class="search">
+          <div class="input-group">
+            <input type="text" class="form-control" id="trackName" placeholder="search for a song..."/>
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" id="searchButton" type="button">Search</button>
+            </span>
+            <!-- <button onclick="findLocation()">Find song</button> -->
+          </div>
+        </div>
       </div>
+    </div>
 
       <div class ="card">
         <div class="song-list"></div>
@@ -78,7 +94,10 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2xfO8Mx9UFDIxJz8O-uFF1civt20siuk&callback=initMap">
+    </script>
     <script type="text/javascript" src="src/GoogleMapObject.js"></script>
     <script type="text/javascript" src="src/SpotifyAuthentication.js"></script>
     <script type="text/javascript" src="src/SpotifyApiRequester.js"></script>
