@@ -61,18 +61,19 @@
             var params = getHashParams();
             musicSafari.setAuthToken(params.access_token);
             musicSafari.displayUserName();
-            googleMapObject.findLocation(function(location){
-              googleMapObject.initMap(location);
-            });
-
             $('#login').hide();
             $('#loggedin').show();
-            $('#user-name').show();
+            $('.center-me').hide();
+            $('body').css('background-image', 'none');
+            $('search').css('display', 'block');
+            $('#map').show();
+            $('.search').show();
           }
       });
     } else {
         $('#login').show();
         $('#loggedin').hide();
+        $('.search').hide();
     }
 
     document.getElementById('login-button').addEventListener('click', function() {

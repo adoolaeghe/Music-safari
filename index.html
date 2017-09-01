@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Music Safari</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +13,7 @@
 
     <nav class="navbar">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Music Safari</a>
+        <img class='logo' src='public/img/logo-music-safari.png'>
       </div>
     </nav>
 
@@ -24,11 +23,11 @@
     <div class="center-me">
       <div class="card text-center">
         <div class="card-body">
-          <h4 class="card-title">music safari</h4>
+          <h4 class="card-title">Music Safari</h4>
           <p class="card-text>">Welcome. Please login to continue</p>
           <div class="spotify-container">
               <div id="login">
-                <button id="login-button" class="btn btn-primary">Log in with Spotify</button>
+                <button id="login-button" class="btn btn-default spotify-btn">Log in with Spotify</button>
               </div>
               <div id="loggedin">
                 <div id="user-profile"> </div>
@@ -68,7 +67,10 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2xfO8Mx9UFDIxJz8O-uFF1civt20siuk&callback=initMap">
+    </script>
     <script type="text/javascript" src="src/GoogleMapObject.js"></script>
     <script type="text/javascript" src="src/SpotifyAuthentication.js"></script>
     <script type="text/javascript" src="src/SpotifyApiRequester.js"></script>
