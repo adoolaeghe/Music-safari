@@ -37,6 +37,14 @@
       marker.addListener('click', function() {
         infowindow.open(self._map, marker);
       });
+    },
+
+    populateMap: function(trackPinObjects) {
+      var self = this;
+      Object.entries(trackPinObjects).forEach(function(object) {
+        console.log(object);
+        self.addMapMarker(object[1].trackId, object[1].location);
+      });
     }
   };
 

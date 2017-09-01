@@ -71,12 +71,9 @@
                 console.log(musicSafari._trackPinObjects);
                 console.log(musicSafari.getCurrentLocation());
                 // Then populate map
-                // musicSafari.populateMap();
+                googleMapObject.populateMap(musicSafari._trackPinObjects);
               });
             });
-
-
-
 
             $('#login').hide();
             $('#loggedin').show();
