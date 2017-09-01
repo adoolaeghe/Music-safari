@@ -47,6 +47,14 @@
       });
     },
 
+    setupDatabaseListener: function(){
+      var callAddMapMarker = function(data) {
+        var val = data.val();
+        googleMapObject.addMapMarker(val.trackId, val.location);
+      };
+      database.ref('trackPinObjects').on('child_added', callAddMapMarker);
+    },
+
     setCurrentLocation: function(location) {
       this._currentLocation = location;
     },

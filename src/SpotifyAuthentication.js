@@ -67,12 +67,11 @@
               googleMapObject.initMap(location);
 
               // Then get data from firebase
-              musicSafari.loadFromDatabase(function(){
-                console.log(musicSafari._trackPinObjects);
-                console.log(musicSafari.getCurrentLocation());
-                // Then populate map
-                googleMapObject.populateMap(musicSafari._trackPinObjects);
-              });
+              // musicSafari.loadFromDatabase(function(){
+              //   // Then populate map
+              //   googleMapObject.populateMap(musicSafari._trackPinObjects);
+              // });
+              musicSafari.setupDatabaseListener();
             });
 
             $('#login').hide();
