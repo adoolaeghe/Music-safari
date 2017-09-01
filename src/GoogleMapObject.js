@@ -17,6 +17,7 @@
         zoom: 14,
         center: currentLocation
       });
+      console.log(this._map);
     },
 
     addMapMarker: function(trackId, location){
@@ -29,7 +30,7 @@
       });
       var marker = new google.maps.Marker({
         position: location,
-        map: self._map,
+        map: this._map,
         title: 'My Song'
       });
       marker.addListener('click', function() {
