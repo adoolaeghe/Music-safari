@@ -2,7 +2,7 @@
 
 # Music Safari
 A web app that uses Spotify's and Google's api to share music based on your current location.
-The app uses Javascript, Jquery, Node.js, and was tested using Jasmine.
+The app uses Javascript, Jquery, Node.js, Firebase and was tested using Jasmine.
 
 # Setup
 - Clone the repo
@@ -12,6 +12,8 @@ The app uses Javascript, Jquery, Node.js, and was tested using Jasmine.
 - Visit localhost:8888 in your broswer
 
 ## Technologies Used
+[Firebase Realtime Database](https://firebase.google.com/docs/database/web/start)
+- Used to store tracks and their locations.
 
 [Google API](https://developers.google.com/maps/documentation/javascript/tutorial)
 - Used to get location of the user and allow a user to tag their music of choice to their location.
