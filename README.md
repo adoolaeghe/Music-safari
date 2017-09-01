@@ -21,7 +21,12 @@ The app uses Javascript, Jquery, Node.js, Firebase and was tested using Jasmine.
 [Spotify API](https://developer.spotify.com/web-api/)
 - Used to authenticate a user and search songs to be added to the map.
 
-## Further implementation
+## Screenshots
+![Imgur](http://i.imgur.com/wmEUhjk.png)
+
+![Imgur](http://i.imgur.com/3pqsIFq.png)
+
+![Imgur](http://i.imgur.com/6FTVDce.png)
 
 
 # Contributors
