@@ -4,6 +4,13 @@
   }
 
   GoogleMapObject.prototype = {
+    initMap: function(currentLocation = {lat: 51.513354, lng: -0.124976}) {
+      this._map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: currentLocation
+      });
+    },
+
     findLocation: function(callback){
       navigator.geolocation.getCurrentPosition(function(position){
         var location = {lat: position.coords.latitude, lng: position.coords.longitude};

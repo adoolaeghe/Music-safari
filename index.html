@@ -65,8 +65,26 @@
       </div>
 
 
-    <script id="user-profile-template" type="text/x-handlebars-template">  </script>
 
+    <!-- Firebase (core component & database)-->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDcDb1nXpdFbhqQlCkrSYeLSMTwPK10WcI",
+      authDomain: "music-safari.firebaseapp.com",
+      databaseURL: "https://music-safari.firebaseio.com",
+      projectId: "music-safari",
+      storageBucket: "music-safari.appspot.com",
+      messagingSenderId: "839078807465"
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+    </script>
+
+    <!-- Spotify authentication -->
+    <script id="user-profile-template" type="text/x-handlebars-template">  </script>
     <script id="oauth-template" type="text/x-handlebars-template">
       <h2>oAuth info</h2>
       <dl class="dl-horizontal">

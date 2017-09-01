@@ -1,7 +1,7 @@
 (function(exports){
   function MusicSafari(){
     this._authToken = "";
-    this._markers = [];
+    this._trackPinObjects = null;
     this._currentLocation = null;
   }
 
@@ -28,10 +28,23 @@
           location: location,
           trackId: trackId
         };
-        self._markers.push(trackPinObject);
-        console.log(self._markers);
+        // Save to firebase
+        self.saveToDatabase(trackPinObject);
+        // Add map marker
         googleMapObject.addMapMarker(trackId, location);
       });
+    },
+
+    saveToDatabase: function(trackPinObj){
+      database.ref('trackPinObjects/').push(trackPinObj);
+    },
+
+    setupDatabaseListener: function(){
+      var callAddMapMarker = function(data) {
+        var val = data.val();
+        googleMapObject.addMapMarker(val.trackId, val.location);
+      };
+      database.ref('trackPinObjects').on('child_added', callAddMapMarker);
     },
 
     setCurrentLocation: function(location) {
@@ -40,6 +53,18 @@
 
     getCurrentLocation: function() {
       return this._currentLocation;
+    },
+
+    setupAppOnLogin: function(){
+      var params = getHashParams();
+      musicSafari.setAuthToken(params.access_token);
+      musicSafari.displayUserName();
+
+      // Initialse map and database listener
+      googleMapObject.findLocation(function(location){
+        googleMapObject.initMap(location);
+        musicSafari.setupDatabaseListener();
+      });
     }
   };
 

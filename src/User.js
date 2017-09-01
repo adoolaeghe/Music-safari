@@ -16,10 +16,9 @@
 
     getUserId: function() {
       userId = this.getUserData().id;
-      console.log(userId);
       return userId;
     }
-  }
+  };
 
-  exports.User = User
+  exports.User = User;
 })(this);
