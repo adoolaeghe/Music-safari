@@ -32,25 +32,6 @@
         console.log(self._markers);
         googleMapObject.addMapMarker(trackId, location);
       });
-
-
-      // var self = this;
-      // var locationPromise = new Promise(function(resolve, reject) {
-      //   googleMapObject.findLocation(resolve);
-      //   // if (self.getCurrentLocation() !== null){
-      //   //   resolve();
-      //   // }
-      // });
-      // locationPromise.then(function(){
-      //   var trackPinObject = {
-      //     location: self.getCurrentLocation(),
-      //     trackId: trackId
-      //   };
-      //   self._markers.push(trackPinObject);
-      //   console.log(self._markers);
-      // }).catch(function(e){
-      //   console.log(e);
-      // })
     },
 
     setCurrentLocation: function(location) {

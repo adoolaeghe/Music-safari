@@ -1,3 +1,17 @@
+body {
+  background: url("img/London-Google-Maps.jpg") no-repeat center center fixed;
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+}
+
 img.album-thumbnail {
   width: 50px;
   height: 50px;
@@ -7,8 +21,12 @@ li {
   list-style: none;
 }
 
-body {
-  font-family: 'Lato', sans-serif;
+.navbar {
+  background-color: white
+}
+
+.search {
+  display: none
 }
 
 .navbar-brand {
@@ -20,11 +38,19 @@ a:hover{
   color: black;
 }
 
+.spotify-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
 #map {
    margin: 0 auto;
    padding: 0;
    height: 400px;
    width: 80%;
+   display: none
  }
 
 #container {

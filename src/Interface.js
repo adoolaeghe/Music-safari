@@ -12,8 +12,4 @@ $(document).ready(function(){
       trackListView.displayTrackList(searchResults);
     }
   });
-
-  $("#open-map").click(function() {
-    googleMapObject.findLocation();
-  });
 });
