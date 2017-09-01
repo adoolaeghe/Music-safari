@@ -61,10 +61,22 @@
             var params = getHashParams();
             musicSafari.setAuthToken(params.access_token);
             musicSafari.displayUserName();
+
+            // Initialse map
             googleMapObject.findLocation(function(location){
               googleMapObject.initMap(location);
+
+              // Then get data from firebase
+              musicSafari.loadFromDatabase(function(){
+                console.log(musicSafari._trackPinObjects);
+                console.log(musicSafari.getCurrentLocation());
+                // Then populate map
+                // musicSafari.populateMap();
+              });
             });
-            musicSafari.loadFromDatabase();
+
+
+
 
             $('#login').hide();
             $('#loggedin').show();

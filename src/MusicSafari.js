@@ -1,7 +1,7 @@
 (function(exports){
   function MusicSafari(){
     this._authToken = "";
-    this._markers = [];
+    this._trackPinObjects = null;
     this._currentLocation = null;
   }
 
@@ -39,9 +39,12 @@
       database.ref('trackPinObjects/').push(trackPinObj);
     },
 
-    loadFromDatabase: function(){
-      database.ref('trackPinObjects').once('value')
-      .then(function(snapshot){ var s = snapshot.val(); console.log(s)})
+    loadFromDatabase: function(callback){
+      var self = this;
+      database.ref('trackPinObjects').once('value').then(function(results){
+        self._trackPinObjects = results.val();
+        callback();
+      });
     },
 
     setCurrentLocation: function(location) {
