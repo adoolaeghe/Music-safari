@@ -64,6 +64,7 @@
             googleMapObject.findLocation(function(location){
               googleMapObject.initMap(location);
             });
+            musicSafari.loadFromDatabase();
 
             $('#login').hide();
             $('#loggedin').show();
