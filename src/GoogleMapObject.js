@@ -22,6 +22,7 @@
 
     addMapMarker: function(trackId, location){
       var self = this;
+      console.log(self);
       var contentString ='<h3>Here is the title</h3>'+
       "<iframe src='https://open.spotify.com/embed?uri=spotify:track:" + trackId + "'frameborder='0' allowtransparency='true'></iframe>";
       console.log(contentString);
