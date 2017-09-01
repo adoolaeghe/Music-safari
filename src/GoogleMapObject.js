@@ -4,6 +4,13 @@
   }
 
   GoogleMapObject.prototype = {
+    initMap: function(currentLocation = {lat: 51.513354, lng: -0.124976}) {
+      this._map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: currentLocation
+      });
+    },
+
     findLocation: function(callback){
       navigator.geolocation.getCurrentPosition(function(position){
         var location = {lat: position.coords.latitude, lng: position.coords.longitude};
@@ -12,20 +19,10 @@
       });
     },
 
-    initMap: function(currentLocation) {
-      this._map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: currentLocation
-      });
-      console.log(this._map);
-    },
-
     addMapMarker: function(trackId, location){
       var self = this;
-      console.log(self);
       var contentString ='<h3>Here is the title</h3>'+
       "<iframe src='https://open.spotify.com/embed?uri=spotify:track:" + trackId + "'frameborder='0' allowtransparency='true'></iframe>";
-      console.log(contentString);
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
