@@ -28,9 +28,13 @@
           location: location,
           trackId: trackId
         };
-        self._markers.push(trackPinObject);
-        console.log(self._markers);
+        // Save to firebase
+        self.saveToDatabase(trackPinObject);
+        // Add map marker
         googleMapObject.addMapMarker(trackId, location);
+
+        // self._markers.push(trackPinObject);
+        // console.log(self._markers);
       });
 
 
@@ -51,6 +55,10 @@
       // }).catch(function(e){
       //   console.log(e);
       // })
+    },
+
+    saveToDatabase: function(trackPinObj){
+      database.ref('trackPinObjects/').push(trackPinObj);
     },
 
     setCurrentLocation: function(location) {
